@@ -11,10 +11,8 @@ app.get("/", function(req, res) {
 /**Task 4 Serve Static Assets */
 app.use("/public", express.static(__dirname + "/public"));
 
-/**Task 5 Serve JSON on a Specific Route */
-
-
-//** #TODO Watch a video explaining the code here, i don't fully understand it. */
+/**Task 5 Serve JSON on a Specific Route.
+ #TODO Watch a video explaining the code here, i don't fully understand it.*/
 app.get("/json", (req, res) => {
   res.json({
     message: "Hello json"
