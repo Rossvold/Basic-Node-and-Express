@@ -6,7 +6,7 @@ console.log("Hello World");
 
 /**Task 2 Start a Working Express Server */
 app.get("/", function(req, res) {
-  res.send("Hello Express");
+  res.sendFile(__dirname + "/views/index.html");
 })
 
 
