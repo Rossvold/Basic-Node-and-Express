@@ -4,7 +4,9 @@ let app = express();
 /**Task 1 Meet the node Console. */
 console.log("Hello World");
 
-/**Task 2-3 Start a Working Express Server & Serve HTML element */
+/**Task 2-3 Start a Working Express Server & Serve HTML element 
+ * #IMPROVE This probably can be written with one line of code instead of 2.
+*/
 app.get("/", function(req, res) {
   res.sendFile(__dirname + "/views/index.html");
 })
@@ -12,7 +14,7 @@ app.get("/", function(req, res) {
 app.use("/public", express.static(__dirname + "/public"));
 
 /**Task 5 Serve JSON on a Specific Route.
- #TODO Watch a video explaining the code here, i don't fully understand it.*/
+ #LEARN Watch a video explaining the code here, i don't fully understand it.*/
 app.get("/json", (req, res) => {
   res.json({
     message: "Hello json"
