@@ -14,14 +14,23 @@ app.get("/", function(req, res) {
 app.use("/public", express.static(__dirname + "/public"));
 
 /**Task 5 Serve JSON on a Specific Route.
- #LEARN Watch a video explaining the code here, i don't fully understand it.*/
+ #LEARN Watch a video explaining the code here, i don't fully understand it.
 app.get("/json", (req, res) => {
   res.json({
     message: "Hello json"
   });
 });
+*/
 
-
+/**Task 6 
+1. I have added the .env file with replit and commented out task 5 so i can do task 6 now*/
+app.get("/json", (req, res) => {
+  if( process.env["MESSAGE_STYLE"] == "uppercase"){
+    res.json({"message": "HELLO JSON"})
+  } else {
+  res.json({"message": "Hello json"})
+  }
+});
 
 
 
