@@ -41,8 +41,17 @@ app.get("/json", (req, res) => {
 });
 
 
+/**#LEARN TASK 8 Chain Middleware to Create a Time Server */
+function getTheCurrentTimeString () {
+  return new Date().toString();
+}
 
-
+app.get("/now", function(req, res, next) {
+req.time = getTheCurrentTimeString();
+  next();
+}, function(req, res) {
+  res.json({ time: req.time })
+});
 
 
 
