@@ -2,7 +2,9 @@ let express = require('express');
 let app = express();
 
 
-/** #LEARN Task 7 Implement a Root-Level Request Logger Middleware*/
+/**
+ * #LEARN Task 7 Implement a Root-Level Request Logger Middleware
+*/
 app.use(function(req, res, next) {
  console.log(req.method + " " + req.path + " - " + req.ip);
   next();
@@ -22,7 +24,7 @@ app.get("/", function(req, res) {
 app.use("/public", express.static(__dirname + "/public"));
 
 /**Task 5 Serve JSON on a Specific Route.
- #LEARN Watch a video explaining the code here, i don't fully understand it.
+* #LEARN Watch a video explaining the code here, i don't fully understand it.
 app.get("/json", (req, res) => {
   res.json({
     message: "Hello json"
@@ -41,7 +43,9 @@ app.get("/json", (req, res) => {
 });
 
 
-/**#LEARN TASK 8 Chain Middleware to Create a Time Server */
+/**
+ * #LEARN TASK 8 Chain Middleware to Create a Time Server 
+ */
 function getTheCurrentTimeString () {
   return new Date().toString();
 }
